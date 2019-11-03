@@ -1,0 +1,25 @@
+{
+  "name": "disbot-jyoushisan",
+  "version": "0.0.1",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KomattaSorata/disbot-jyoushisan.git"
+  },
+  "author": "Sorata Fujitsuka",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KomattaSorata/disbot-jyoushisan/issues"
+  },
+  "homepage": "https://github.com/KomattaSorata/disbot-jyoushisan#readme",
+  "dependencies": {
+    "discord.js": "^11.5.1",
+    "kuromoji": "^0.1.2",
+    "node-opus": "^0.3.3",
+    "twitter": "^1.7.1"
+  }
+}
