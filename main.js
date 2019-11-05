@@ -10,6 +10,7 @@ const eggres = require('./src/egg_res.js');
 const mkgen_tri = require('./src/mkgen_tri.js');
 const mkgen_dir = require('./src/mkgen_dir.js');
 const fs = require('fs');
+const mkgenbenkyou = require('./fetchtweet.js');
 
 client.on('ready', () => {
     console.log('上司さん、只今出勤します。')
@@ -88,12 +89,19 @@ client.on('message', msg => {
 });
 
 client.on('message', msg => {
+  if (msg.content === "勉強しろ"){
+    mkgenbenkyou();
+    msg.channel.send("はいはい、勉強したよ（どやっ）");
+  } else {}
+});
+
+client.on('message', msg => {
     var x = eggtri.indexOf(msg.content);
     if(x === -1){
       return;
     } else {
       msg.channel.send(eggres[x]);
     }
-  });
+});
   
 client.login(mibunshou.discord_token);

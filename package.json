@@ -18,6 +18,8 @@
   "homepage": "https://github.com/KomattaSorata/disbot-jyoushisan#readme",
   "dependencies": {
     "discord.js": "^11.5.1",
+    "fetch-tweets": "^0.1.7",
+    "fs": "0.0.1-security",
     "kuromoji": "^0.1.2",
     "node-opus": "^0.3.3",
     "twitter": "^1.7.1"
