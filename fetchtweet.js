@@ -13,16 +13,17 @@ module.exports = () => {
         fs.writeFileSync('./src/mkgen_source/since_id_sorata.txt', '0');
     };
 
-    if (fs.existsSync('./src/mkgen_source/since_id_josh.txt.txt')) {} else {
-        fs.writeFileSync('./src/mkgen_source/since_id_josh.txt.txt', '0');
+    if (fs.existsSync('./src/mkgen_source/since_id_josh.txt')) {} else {
+        fs.writeFileSync('./src/mkgen_source/since_id_josh.txt', '0');
     };
 
     const since_tid_sorata = fs.readFileSync('./src/mkgen_source/since_id_sorata.txt', 'UTF-8');
+    const since_tid_josh = fs.readFileSync('./src/mkgen_source/since_id_josh.txt', 'UTF-8');
 
     const params_sorata = {screen_name: 'komattasorata', count:200, exclude_replies: true, include_rts: false, since_id: since_tid_sorata};
     client.get('statuses/user_timeline', params_sorata, function(error, tweets, response) {
     if (!error) {
-        fs.writeFile('./since_id_sorata.txt', tweets[0].id, (err) => {
+        fs.writeFile('./src/mkgen_source/since_id_sorata.txt', tweets[0].id, (err) => {
             if(err) throw err; 
         });
         tweets.map(resp => {
@@ -34,13 +35,11 @@ module.exports = () => {
         });
     }
     });
-
-    const since_tid_josh = fs.readFileSync('./src/mkgen_source/since_id_josh.txt', 'UTF-8');
-
+    
     const params_josh = {screen_name: 'joshanska', count:200, exclude_replies: true, include_rts: false, since_id: since_tid_josh};
     client.get('statuses/user_timeline', params_josh, function(error, tweets, response) {
     if (!error) {
-        fs.writeFile('./since_id_josh.txt', tweets[0].id, (err) => {
+        fs.writeFile('./src/mkgen_source/since_id_josh.txt', tweets[0].id, (err) => {
             if(err) throw err; 
         });
         tweets.map(resp => {
