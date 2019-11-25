@@ -9,6 +9,14 @@ module.exports = () => {
         access_token_secret: mibunshou.tw_acctokensecret
     });
 
+    if (fs.existsSync('./src/mkgen_source/since_id_sorata.txt')) {} else {
+        fs.writeFileSync('./src/mkgen_source/since_id_sorata.txt', '0');
+    };
+
+    if (fs.existsSync('./src/mkgen_source/since_id_josh.txt.txt')) {} else {
+        fs.writeFileSync('./src/mkgen_source/since_id_josh.txt.txt', '0');
+    };
+
     const since_tid_sorata = fs.readFileSync('./src/mkgen_source/since_id_sorata.txt', 'UTF-8');
 
     const params_sorata = {screen_name: 'komattasorata', count:200, exclude_replies: true, include_rts: false, since_id: since_tid_sorata};
