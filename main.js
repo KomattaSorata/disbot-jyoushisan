@@ -17,6 +17,7 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
+  if(message.channel.id === mibunshou.channelid){
     var x = mkgen_tri.indexOf(msg.content);
     if(x === -1){
         return;
@@ -86,22 +87,25 @@ client.on('message', msg => {
             });
           });
     }
+  }
 });
 
 client.on('message', msg => {
-  if (msg.content === "勉強しろ"){
+  if ((msg.content === "勉強しろ") || (message.channel.id === mibunshou.channelid)){
     mkgenbenkyou();
     msg.channel.send("はいはい、勉強したよ（どやっ）");
   } else {}
 });
 
 client.on('message', msg => {
+  if(message.channel.id === mibunshou.channelid){
     var x = eggtri.indexOf(msg.content);
     if(x === -1){
       return;
     } else {
       msg.channel.send(eggres[x]);
     }
+  }
 });
   
 client.login(mibunshou.discord_token);
