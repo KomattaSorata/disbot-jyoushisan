@@ -93,6 +93,7 @@ client.on('message', msg => {
 client.on('message', msg => {
   if ((msg.content === "勉強しろ") || (message.channel.id === mibunshou.channelid)){
     mkgenbenkyou();
+    console.log("Fetched new tweet from mkgenbenkyou().");
     msg.channel.send("はいはい、勉強したよ（どやっ）");
   } else {}
 });
